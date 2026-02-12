@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="theme_ocean">
+    <title>Duralux || Transaction History</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css">
+    <!--! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries !-->
+    <!--[if lt IE 9]>
+			<script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+    <!--! ================================================================ !-->
+    <!--! [Start] Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <div id="navigation-placeholder"></div>
+    <!--! ================================================================ !-->
+    <!--! [End]  Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <!--! ================================================================ !-->
+    <!--! [Start] Header !-->
+    <!--! ================================================================ !-->
+    <div id="header-placeholder"></div>
+    <!--! ================================================================ !-->
+    <!--! [End] Header !-->
+    <!--! ================================================================ !-->
+    <!--! ================================================================ !-->
+    <!--! [Start] Main Content !-->
+    <!--! ================================================================ !-->
+    <main class="nxl-container">
+        <div class="nxl-content">
+            <!-- [ page-header ] start -->
+            <div class="page-header">
+                <div class="page-header-left d-flex align-items-center">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10">Transaction History</h5>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item">Purchases</li>
+                        <li class="breadcrumb-item">History</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- [ page-header ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="main-content">
+                <div class="row">
+                    <!-- Filter Section -->
+                    <div class="col-12 mb-4">
+                        <div class="card stretch stretch-full">
+                            <div class="card-header">
+                                <h5 class="card-title">Filter Transactions</h5>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row g-3">
+                                        <div class="col-md-3">
+                                            <label class="form-label">Order ID</label>
+                                            <input type="text" class="form-control" placeholder="Order ID">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Date Range</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Status</label>
+                                            <select class="form-select">
+                                                <option value="">All Statuses</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="Pending">Pending</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 d-flex align-items-end">
+                                            <button type="submit" class="btn btn-primary w-100"><i class="feather-filter me-2"></i>Filter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transactions Table Section -->
+                    <div class="col-12">
+                        <div class="card stretch stretch-full">
+                            <div class="card-header">
+                                <h5 class="card-title">Recent Transactions</h5>
+                            </div>
+                            <div class="card-body custom-card-action p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Order ID</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Items</th>
+                                                <th scope="col">Amount (NGN)</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col" class="text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-bold text-dark">#ORD-2023-001</td>
+                                                <td>Oct 24, 2023</td>
+                                                <td>HP LaserJet Pro M404dn (x2)</td>
+                                                <td class="fw-bold">₦450,000</td>
+                                                <td><span class="badge bg-soft-success text-success">Completed</span></td>
+                                                <td class="text-end">
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">#ORD-2023-002</td>
+                                                <td>Oct 22, 2023</td>
+                                                <td>Dell XPS 13 Laptop (x1)</td>
+                                                <td class="fw-bold">₦1,200,000</td>
+                                                <td><span class="badge bg-soft-warning text-warning">Pending</span></td>
+                                                <td class="text-end">
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">#ORD-2023-003</td>
+                                                <td>Oct 20, 2023</td>
+                                                <td>Office Desk (x5)</td>
+                                                <td class="fw-bold">₦250,000</td>
+                                                <td><span class="badge bg-soft-success text-success">Completed</span></td>
+                                                <td class="text-end">
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">#ORD-2023-004</td>
+                                                <td>Oct 18, 2023</td>
+                                                <td>Conference Table (x1)</td>
+                                                <td class="fw-bold">₦180,000</td>
+                                                <td><span class="badge bg-soft-danger text-danger">Cancelled</span></td>
+                                                <td class="text-end">
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fw-bold text-dark">#ORD-2023-005</td>
+                                                <td>Oct 15, 2023</td>
+                                                <td>Projector Screen (x1)</td>
+                                                <td class="fw-bold">₦45,000</td>
+                                                <td><span class="badge bg-soft-success text-success">Completed</span></td>
+                                                <td class="text-end">
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <ul class="pagination mb-0 justify-content-end">
+                                    <li class="page-item disabled"><a class="page-link" href="javascript:void(0)">Previous</a></li>
+                                    <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:void(0)">Next</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+        <!-- [ Footer ] start -->
+        <footer class="footer">
+            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+                <span>Copyright ©</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+            </div>
+        </footer>
+        <!-- [ Footer ] end -->
+    </main>
+    <!--! ================================================================ !-->
+    <!--! [End] Main Content !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Theme Script !-->
+    <!--! ================================================================ !-->
+    <script src="assets/vendors/js/vendors.min.js"></script>
+    <script src="assets/js/common-init.min.js"></script>
+    <script src="assets/js/theme-customizer-init.min.js"></script>
+    <script src="assets/js/partials-loader.js"></script>
+    <!--! ================================================================ !-->
+    <!--! [End] Theme Script !-->
+    <!--! ================================================================ !-->
+</body>
+
+</html>
