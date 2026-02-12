@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="theme_ocean">
+    <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
+    <!--! BEGIN: Apps Title-->
+    <title>Vendors+NSP || Browse Items</title>
+    <!--! END:  Apps Title-->
+    <!--! BEGIN: Favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!--! END: Favicon-->
+    <!--! BEGIN: Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!--! END: Bootstrap CSS-->
+    <!--! BEGIN: Vendors CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/select2-theme.min.css">
+    <!--! END: Vendors CSS-->
+    <!--! BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css">
+    <!--! END: Custom CSS-->
+</head>
+
+<body>
+    <!--! ================================================================ !-->
+    <!--! [Start] Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <div id="navigation-placeholder"></div>
+    <!--! ================================================================ !-->
+    <!--! [End]  Navigation Manu !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Header !-->
+    <!--! ================================================================ !-->
+    <div id="header-placeholder"></div>
+    <!--! ================================================================ !-->
+    <!--! [End] Header !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Main Content !-->
+    <!--! ================================================================ !-->
+    <main class="nxl-container">
+        <div class="nxl-content">
+            <!-- [ page-header ] start -->
+            <div class="page-header">
+                <div class="page-header-left d-flex align-items-center">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10">Browse Items</h5>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item">Item Catalog</li>
+                        <li class="breadcrumb-item">Browse Items</li>
+                    </ul>
+                </div>
+                <div class="page-header-right ms-auto">
+                    <div class="page-header-right-items">
+                        <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                            <a href="javascript:void(0);" class="btn btn-primary">
+                                <i class="feather-shopping-cart me-2"></i>
+                                <span>My Quote Request</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-md-none d-flex align-items-center">
+                        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                            <i class="feather-align-right fs-20"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- [ page-header ] end -->
+            <!-- [ Main Content ] start -->
+            <div class="main-content">
+                <!-- Filter Section -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card border-0 p-4 mb-4">
+                            <form class="d-flex align-items-center gap-3 flex-wrap">
+                                <div class="flex-fill" style="min-width: 200px;">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="feather-search"></i></span>
+                                        <input type="text" class="form-control" placeholder="Search items..." name="search">
+                                    </div>
+                                </div>
+                                <div class="flex-fill" style="min-width: 200px;">
+                                    <select class="form-control" data-select2-selector="category" name="category">
+                                        <option value="">All Categories</option>
+                                        <option value="construction">Construction Materials</option>
+                                        <option value="electrical">Electrical Supplies</option>
+                                        <option value="plumbing">Plumbing & Water</option>
+                                        <option value="safety">Safety Gear</option>
+                                        <option value="finishing">Finishing & Interior</option>
+                                    </select>
+                                </div>
+                                <div class="flex-fill" style="min-width: 200px;">
+                                    <select class="form-control" data-select2-selector="vendor" name="vendor">
+                                        <option value="">All Vendors</option>
+                                        <option value="adebayo">Adebayo Constructions</option>
+                                        <option value="tech">Tech Solutions Inc.</option>
+                                        <option value="global">Global Supplies Ltd.</option>
+                                    </select>
+                                </div>
+                                <div class="">
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="feather-filter me-2"></i>Filter
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="row">
+                    <!-- Item 1 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/1.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">Adebayo Constructions</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Dangote Cement (50kg)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦5,200</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/2.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">Global Supplies Ltd</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Iron Rods (16mm)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦7,500 <span class="fs-11 text-muted fw-normal">/ unit</span></h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/3.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-warning position-absolute top-0 end-0 m-3">Low Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">Adebayo Constructions</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Granite (30 tons)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦180,000</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/4.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">CleanCo Services</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Sharp Sand (20 tons)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦95,000</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/5.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">Tech Solutions Inc.</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Fiber Optic Cable (100m)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦45,000</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/6.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-danger position-absolute top-0 end-0 m-3">Out of Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">Global Supplies Ltd</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Safety Helmets (Pack of 10)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦25,000</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/7.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">CleanCo Services</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Industrial Cleaner (20L)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦18,500</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="col-xxl-3 col-xl-4 col-md-6">
+                        <div class="card stretch stretch-full border-0 shadow-sm transition-hover">
+                            <div class="card-body p-0">
+                                <div class="bg-light text-center rounded-top position-relative overflow-hidden">
+                                    <a href="item-details.html">
+                                        <img src="assets/images/gallery/8.png" alt="" class="img-fluid rounded-top hover-scale" style="height: 200px; width: 100%; object-fit: cover;">
+                                    </a>
+                                    <span class="badge bg-success position-absolute top-0 end-0 m-3">In Stock</span>
+                                </div>
+                                <div class="p-4">
+                                    <div class="mb-3">
+                                        <a href="vendors-view.html" class="fs-11 fw-medium text-muted text-uppercase text-spacing-1">Adebayo Constructions</a>
+                                        <a href="item-details.html" class="h6 fw-bold d-block text-truncate mt-1">Red Bricks (1000 Pcs)</a>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bolder text-primary mb-0">₦120,000</h5>
+                                        <a href="item-details.html" class="btn btn-sm btn-light-brand"><i class="feather-eye me-1"></i>View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Pagination -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="d-flex align-items-center justify-content-between mt-4">
+                            <div class="text-muted fs-12">Showing 1 to 8 of 56 items</div>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="javascript:void(0);" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="javascript:void(0);">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+        <!-- [ Footer ] start -->
+        <footer class="footer">
+            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+                <span>Copyright ©</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+            </div>
+        </footer>
+        <!-- [ Footer ] end -->
+    </main>
+
+    <!--! ================================================================ !-->
+    <!--! Footer Script !-->
+    <!--! ================================================================ !-->
+    <!--! BEGIN: Vendors JS !-->
+    <script src="assets/vendors/js/vendors.min.js"></script>
+    <script src="assets/vendors/js/select2.min.js"></script>
+    <script src="assets/vendors/js/select2-active.min.js"></script>
+    <!--! END: Vendors JS !-->
+    <!--! BEGIN: Apps Init  !-->
+    <script src="assets/js/common-init.min.js"></script>
+    <script src="assets/js/partials-loader.js"></script>
+    <!--! END: Apps Init !-->
+</body>
+
+</html>

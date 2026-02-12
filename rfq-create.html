@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="author" content="theme_ocean">
+    <!--! The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags !-->
+    <!--! BEGIN: Apps Title-->
+    <title>Vendors+NSP || Create RFQ</title>
+    <!--! END:  Apps Title-->
+    <!--! BEGIN: Favicon-->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!--! END: Favicon-->
+    <!--! BEGIN: Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!--! END: Bootstrap CSS-->
+    <!--! BEGIN: Vendors CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/select2-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/datepicker.min.css">
+    <!--! END: Vendors CSS-->
+    <!--! BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css">
+    <!--! END: Custom CSS-->
+</head>
+
+<body>
+    <!--! ================================================================ !-->
+    <!--! [Start] Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <div id="navigation-placeholder"></div>
+    <!--! ================================================================ !-->
+    <!--! [End]  Navigation Manu !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Header !-->
+    <!--! ================================================================ !-->
+    <div id="header-placeholder"></div>
+    <!--! ================================================================ !-->
+    <!--! [End] Header !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Main Content !-->
+    <!--! ================================================================ !-->
+    <main class="nxl-container">
+        <div class="nxl-content">
+            <!-- [ page-header ] start -->
+            <div class="page-header">
+                <div class="page-header-left d-flex align-items-center">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10">Create RFQ</h5>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item">RFQ & Bidding</li>
+                        <li class="breadcrumb-item">Create</li>
+                    </ul>
+                </div>
+                <div class="page-header-right ms-auto">
+                    <div class="page-header-right-items">
+                        <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
+                            <a href="javascript:void(0);" class="btn btn-light-brand">
+                                <i class="feather-save me-2"></i>
+                                <span>Save Draft</span>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-primary successAlertMessage">
+                                <i class="feather-send me-2"></i>
+                                <span>Publish RFQ</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-md-none d-flex align-items-center">
+                        <a href="javascript:void(0)" class="page-header-right-open-toggle">
+                            <i class="feather-align-right fs-20"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- [ page-header ] end -->
+
+            <!-- [ Main Content ] start -->
+            <div class="main-content container-lg">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card stretch stretch-full">
+                            <div class="card-body">
+                                <div class="mb-5 d-flex align-items-center justify-content-between">
+                                    <h5 class="fw-bold mb-0">RFQ Details</h5>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-6 mb-4">
+                                        <label class="form-label">Title <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="RFQ Title (e.g. Supply of Cement for Project A)">
+                                    </div>
+                                    <div class="col-lg-6 mb-4">
+                                        <label class="form-label">Category</label>
+                                        <select class="form-control" data-select2-selector="category">
+                                            <option value="construction">Construction Materials</option>
+                                            <option value="electrical">Electrical Supplies</option>
+                                            <option value="plumbing">Plumbing</option>
+                                            <option value="services">Services</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Submission Deadline <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control datepicker-input" placeholder="Select Date">
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Expected Delivery Date</label>
+                                        <input type="text" class="form-control datepicker-input" placeholder="Select Date">
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label class="form-label">Priority</label>
+                                        <select class="form-control" data-select2-selector="priority">
+                                            <option value="high" data-bg="bg-danger">High</option>
+                                            <option value="medium" data-bg="bg-warning" selected>Medium</option>
+                                            <option value="low" data-bg="bg-success">Low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Description / Instructions</label>
+                                        <textarea class="form-control" rows="4" placeholder="Provide detailed instructions for vendors..."></textarea>
+                                    </div>
+                                </div>
+
+                                <hr class="my-5">
+
+                                <div class="mb-4">
+                                    <h5 class="fw-bold">Items Required</h5>
+                                    <span class="fs-12 text-muted">List the items you need quotes for.</span>
+                                </div>
+
+                                <!-- Item List Table Placeholder -->
+                                <div id="item-list-container"></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+
+        <!-- [ Footer ] start -->
+        <footer class="footer">
+            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+                <span>Copyright ©</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+            </div>
+        </footer>
+        <!-- [ Footer ] end -->
+    </main>
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Catalog Modal !-->
+    <!--! ================================================================ !-->
+    <div class="modal fade" id="catalogModal" tabindex="-1" aria-labelledby="catalogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="catalogModalLabel">Select Items from Catalog</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-light">
+                    <!-- Filter Bar -->
+                    <div class="card border-0 p-3 mb-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="flex-fill">
+                                <input type="text" class="form-control" placeholder="Search items...">
+                            </div>
+                            <select class="form-control w-25">
+                                <option>All Categories</option>
+                                <option>Construction</option>
+                                <option>Electrical</option>
+                            </select>
+                            <button class="btn btn-primary">Filter</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Catalog Grid (Simplified) -->
+                    <div class="row g-3">
+                        <!-- Item 1 -->
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <img src="assets/images/gallery/1.png" class="card-img-top" alt="..." style="height: 150px; object-fit: cover;">
+                                <div class="card-body p-3">
+                                    <h6 class="card-title fw-bold text-truncate">Dangote Cement (50kg)</h6>
+                                    <p class="card-text text-primary fw-bold mb-1">₦5,200</p>
+                                    <button class="btn btn-sm btn-outline-primary w-100 add-to-rfq-btn" 
+                                            data-name="Dangote Cement (50kg)" 
+                                            data-desc="Standard Portland Cement 50kg bag" 
+                                            data-unit="pcs"
+                                            data-price="5200">
+                                        Add to RFQ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <img src="assets/images/gallery/2.png" class="card-img-top" alt="..." style="height: 150px; object-fit: cover;">
+                                <div class="card-body p-3">
+                                    <h6 class="card-title fw-bold text-truncate">Iron Rods (16mm)</h6>
+                                    <p class="card-text text-primary fw-bold mb-1">₦7,500</p>
+                                    <button class="btn btn-sm btn-outline-primary w-100 add-to-rfq-btn" 
+                                            data-name="Iron Rods (16mm)" 
+                                            data-desc="High quality TMT 16mm iron rod" 
+                                            data-unit="pcs"
+                                            data-price="7500">
+                                        Add to RFQ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Item 3 -->
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <img src="assets/images/gallery/3.png" class="card-img-top" alt="..." style="height: 150px; object-fit: cover;">
+                                <div class="card-body p-3">
+                                    <h6 class="card-title fw-bold text-truncate">Granite (30 tons)</h6>
+                                    <p class="card-text text-primary fw-bold mb-1">₦180,000</p>
+                                    <button class="btn btn-sm btn-outline-primary w-100 add-to-rfq-btn" 
+                                            data-name="Granite (30 tons)" 
+                                            data-desc="30 Tons of ¾ inch granite stones" 
+                                            data-unit="tons"
+                                            data-price="180000">
+                                        Add to RFQ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <img src="assets/images/gallery/4.png" class="card-img-top" alt="..." style="height: 150px; object-fit: cover;">
+                                <div class="card-body p-3">
+                                    <h6 class="card-title fw-bold text-truncate">Sharp Sand (20 tons)</h6>
+                                    <p class="card-text text-primary fw-bold mb-1">₦95,000</p>
+                                    <button class="btn btn-sm btn-outline-primary w-100 add-to-rfq-btn" 
+                                            data-name="Sharp Sand (20 tons)" 
+                                            data-desc="20 Tons of river sharp sand" 
+                                            data-unit="tons"
+                                            data-price="95000">
+                                        Add to RFQ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--! ================================================================ !-->
+    <!--! [End] Catalog Modal !-->
+    <!--! ================================================================ !-->
+
+
+    <!--! BEGIN: Vendors JS !-->
+    <script src="assets/vendors/js/vendors.min.js"></script>
+    <script src="assets/vendors/js/select2.min.js"></script>
+    <script src="assets/vendors/js/select2-active.min.js"></script>
+    <script src="assets/vendors/js/datepicker.min.js"></script>
+    <!--! END: Vendors JS !-->
+    
+    <!--! BEGIN: Apps Init  !-->
+    <script src="assets/js/common-init.min.js"></script>
+    <script src="assets/js/partials-loader.js"></script>
+    <script src="assets/js/item-list-manager.js"></script>
+    <!--! END: Apps Init !-->
+
+    <script>
+        $(document).ready(function() {
+            // Load Item List Table Partial
+            $('#item-list-container').load('partials/item-list-table.html', function() {
+                // Initialize Item List Manager after partial load
+                const itemListConfig = {
+                    tableId: 'item_list_table',
+                    addRowBtn: '#add_row',
+                    deleteRowBtn: '#delete_row',
+                    totalField: '#total_amount'
+                };
+                
+                const rfqItemManager = new ItemListManager(itemListConfig);
+                window.rfqItemManager = rfqItemManager; // Expose to window for modal access
+                
+                // Bind Modal Open Button
+                $('#add_from_catalog').on('click', function() {
+                    $('#catalogModal').modal('show');
+                });
+            });
+
+            // Bind Catalog "Add to RFQ" buttons
+            $(document).on('click', '.add-to-rfq-btn', function() {
+                const itemData = {
+                    name: $(this).data('name'),
+                    description: $(this).data('desc'),
+                    unit: $(this).data('unit'),
+                    price: $(this).data('price') // Target Price
+                };
+                
+                if (window.rfqItemManager) {
+                    window.rfqItemManager.addItemFromCatalog(itemData);
+                    // Toast or visual feedback could be added here
+                    $(this).html('<i class="feather-check"></i> Added').removeClass('btn-outline-primary').addClass('btn-success');
+                    setTimeout(() => {
+                        $(this).html('Add to RFQ').removeClass('btn-success').addClass('btn-outline-primary');
+                    }, 1000);
+                }
+            });
+
+            // Datepicker Init (re-init if needed)
+            $('.datepicker-input').datepicker({
+                autoHide: true,
+                zIndex: 2048,
+            });
+        });
+    </script>
+</body>
+
+</html>
