@@ -57,131 +57,129 @@
             <!-- [ page-header ] end -->
             <!-- [ Main Content ] start -->
             <div class="main-content">
+                <!-- Consolidated Main Card -->
+                <div class="col-12 mb-4">
+                    <div class="card stretch stretch-full">
+                        <div class="card-body">
+                            <!-- Top Row: Vendor & Actions -->
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="avatar-image avatar-lg">
+                                        <div class="avatar-text bg-soft-success text-success fs-20">GS</div>
+                                    </div>
+                                    <div>
+                                        <h5 class="fw-bold mb-1">Global Supplies Ltd.</h5>
+                                        <div class="d-flex gap-2 fs-12 text-muted align-items-center">
+                                            <span>Office Furniture Specialist</span>
+                                            <i class="feather-circle fs-6"></i>
+                                            <span class="text-warning"><i class="feather-star me-1"></i>4.8</span>
+                                            <i class="feather-circle fs-6"></i>
+                                            <a href="vendors-view.html" class="text-primary link-underline">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="mb-3">
+                                        <span class="badge bg-soft-info text-info fs-12 px-3 py-2">Status: Negotiating</span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#sendBargainModal">
+                                            <i class="feather-refresh-cw me-2"></i> Send Counter-Offer
+                                        </button>
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#awardContractModal">
+                                            <i class="feather-check-circle me-2"></i> Award Contract
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="border-dashed my-4">
+
+                            <!-- Middle Row: Metrics -->
+                            <div class="row g-4">
+                                <div class="col-md-3 col-6 text-center border-end">
+                                    <span class="fs-12 text-muted d-block uppercase mb-1">Quote Amount</span>
+                                    <span class="fs-20 fw-bolder text-dark">₦80,500</span>
+                                </div>
+                                <div class="col-md-3 col-6 text-center border-end">
+                                    <span class="fs-12 text-muted d-block uppercase mb-1">Items Count</span>
+                                    <span class="fs-20 fw-bold text-dark">50 Units</span>
+                                </div>
+                                <div class="col-md-3 col-6 text-center border-end">
+                                    <span class="fs-12 text-muted d-block uppercase mb-1">Delivery Time</span>
+                                    <span class="fs-20 fw-bold text-dark">7 Days</span>
+                                </div>
+                                <div class="col-md-3 col-6 text-center">
+                                    <span class="fs-12 text-muted d-block uppercase mb-1">Submission Date</span>
+                                    <span class="fs-20 fw-bold text-dark">Oct 26, 2023</span>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Row: Message -->
+                            <div class="mt-4 p-4 bg-gray-100 rounded border border-dashed">
+                                <h6 class="fw-bold mb-2 text-muted">Vendor's Note:</h6>
+                                <p class="mb-0 text-dark">Offer valid for bulk purchase. Delivery included. We can supply standard ergonomic chairs with a 3-year warranty.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Config: Quote & History -->
                 <div class="row">
-                    <!-- Left Column: Submission Info & Bargain History -->
-                    <div class="col-lg-8">
-                        <!-- Submission Info Card -->
+                    <!-- Quote Attachment -->
+                    <div class="col-lg-6">
                         <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Submission Information</h5>
-                                <span class="badge bg-soft-info text-info">Negotiating</span>
-                            </div>
-                            <div class="card-body">
-                                <div class="row g-4">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label text-muted">Submission Date</label>
-                                            <div class="fw-bold text-dark">Oct 26, 2023</div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label text-muted">Quote Amount</label>
-                                            <div class="fw-bold text-primary fs-16">₦80,500</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label text-muted">Items Count</label>
-                                            <div class="fw-bold text-dark">50 Units</div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label text-muted">Delivery Time</label>
-                                            <div class="fw-bold text-dark">7 Days</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label text-muted">Message from Vendor</label>
-                                        <p class="text-dark bg-gray-100 p-3 rounded">Offer valid for bulk purchase. Delivery included. We can supply standard ergonomic chairs with a 3-year warranty.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Quote Attachment Card -->
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
+                            <div class="card-header d-flex justify-content-between align-items-center">
                                 <h5 class="card-title">Attached Quote</h5>
-                                <a href="javascript:void(0)" class="btn btn-sm btn-light-brand"><i class="feather-download me-1"></i> Download PDF</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-light-brand"><i class="feather-download me-1"></i> Download</a>
                             </div>
-                            <div class="card-body text-center bg-gray-100 rounded mx-4 mb-4" style="min-height: 300px; display: flex; align-items: center; justify-content: center;">
-                                <div class="text-muted">
-                                    <i class="feather-file-text display-3 mb-2"></i>
-                                    <p>Preview of proposal_v1.pdf</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bargain History Card -->
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Bargain History</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="activity-feed">
-                                    <div class="feed-item">
-                                        <div class="date">Oct 29, 2023</div>
-                                        <div class="text">
-                                            <span class="fw-bold text-dark">You sent a counter-offer:</span> 
-                                            <span class="fw-bold text-primary">₦78,000</span> for <span class="fw-bold">55 Units</span>.
-                                            <p class="fs-12 text-muted mt-1">"We can increase the order to 55 units if you can reduce the unit price."</p>
-                                        </div>
-                                    </div>
-                                    <div class="feed-item">
-                                        <div class="date">Oct 28, 2023</div>
-                                        <div class="text">
-                                            <span class="fw-bold text-dark">Vendor replied:</span> "Reviewing your request..."
-                                        </div>
-                                    </div>
-                                    <div class="feed-item">
-                                        <div class="date">Oct 26, 2023</div>
-                                        <div class="text">
-                                            <span class="fw-bold text-dark">Original Submission:</span> 
-                                            <span class="fw-bold text-primary">₦80,500</span> for <span class="fw-bold">50 Units</span>.
-                                        </div>
-                                    </div>
+                            <div class="card-body bg-gray-50 d-flex align-items-center justify-content-center" style="min-height: 350px;">
+                                <div class="text-center text-muted">
+                                    <i class="feather-file-text display-1 mb-3 opacity-25"></i>
+                                    <h6 class="text-dark">proposal_v1.pdf</h6>
+                                    <span class="fs-12">2.4 MB</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right Column: Vendor Profile & Actions -->
-                    <div class="col-lg-4">
-                        <!-- Vendor Profile Card -->
+                    <!-- Bargain History -->
+                    <div class="col-lg-6">
                         <div class="card stretch stretch-full">
                             <div class="card-header">
-                                <h5 class="card-title">Vendor Profile</h5>
-                            </div>
-                            <div class="card-body text-center">
-                                <div class="avatar-image avatar-lg mb-3 mx-auto">
-                                    <div class="avatar-text bg-soft-success text-success fs-24">GS</div>
-                                </div>
-                                <h5 class="fw-bold mb-1">Global Supplies Ltd.</h5>
-                                <p class="text-muted fs-12 mb-3">Office Furniture Specialist</p>
-                                <div class="d-flex justify-content-center gap-2 mb-4">
-                                    <span class="badge bg-soft-primary text-primary">Verified</span>
-                                    <span class="badge bg-soft-warning text-warning">Rating: 4.8</span>
-                                </div>
-                                <div class="d-grid">
-                                    <a href="vendors-view.html" class="btn btn-outline-primary">View Full Profile</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Actions Card -->
-                        <div class="card stretch stretch-full">
-                            <div class="card-header">
-                                <h5 class="card-title">Actions</h5>
+                                <h5 class="card-title">Negotiation History</h5>
                             </div>
                             <div class="card-body">
-                                <div class="d-grid gap-3">
-                                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#sendBargainModal">
-                                        <i class="feather-refresh-cw me-2"></i> Send Bargain
-                                    </button>
-                                    <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#awardContractModal">
-                                        <i class="feather-check-circle me-2"></i> Award Contract
-                                    </button>
-                                </div>
-                                <div class="mt-4 text-center">
-                                    <p class="fs-12 text-muted">Status: <span class="text-info fw-bold">Negotiation in Progress</span></p>
+                                <div class="activity-feed">
+                                    <div class="feed-item pb-4 border-start ps-4 position-relative">
+                                        <div class="dot position-absolute start-0 top-0 translate-middle p-2 bg-primary rounded-circle border border-white"></div>
+                                        <span class="fs-11 text-muted fw-bold">Oct 29, 2023 - 02:30 PM</span>
+                                        <div class="p-3 mt-2 bg-soft-primary rounded">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <span class="fw-bold text-primary">You sent a counter-offer</span>
+                                                <span class="fw-bold text-dark">₦78,000</span>
+                                            </div>
+                                            <p class="fs-13 mb-0 text-dark">"We can increase the order to 55 units if you can reduce the unit price."</p>
+                                            <div class="mt-2 fs-12 text-muted">
+                                                <span>Request: </span> <span class="fw-bold">55 Units</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item pb-4 border-start ps-4 position-relative">
+                                        <div class="dot position-absolute start-0 top-0 translate-middle p-2 bg-gray-400 rounded-circle border border-white"></div>
+                                        <span class="fs-11 text-muted fw-bold">Oct 28, 2023 - 09:15 AM</span>
+                                        <div class="mt-1">
+                                            <span class="fw-bold text-dark">Vendor viewed your request</span>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item pb-0 border-start ps-4 position-relative">
+                                        <div class="dot position-absolute start-0 top-0 translate-middle p-2 bg-success rounded-circle border border-white"></div>
+                                        <span class="fs-11 text-muted fw-bold">Oct 26, 2023 - 10:00 AM</span>
+                                        <div class="mt-1">
+                                            <span class="fw-bold text-dark">Original Submission Received</span>
+                                            <div class="fs-13 text-muted">Price: ₦80,500 | Qty: 50</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
