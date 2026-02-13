@@ -288,11 +288,9 @@
         $(document).ready(function() {
             if ($('#vendorList').length) {
                 $('#vendorList').DataTable({
-                    "aLengthMenu": [
-                        [10, 25, 50, -1],
-                        [10, 25, 50, "All"]
-                    ],
-                    "iDisplayLength": 10,
+                    "searching": false,
+                    "lengthChange": false,
+                    "pageLength": 10,
                     "language": {
                         paginate: {
                             next: '<i class="feather feather-chevron-right"></i>',

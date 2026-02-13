@@ -104,6 +104,7 @@
                                                 <th scope="col">Quote Amount (NGN)</th>
                                                 <th scope="col">Message</th>
                                                 <th scope="col">Attachment</th>
+                                                <th scope="col">Status</th>
                                                 <th scope="col" class="text-end">Actions</th>
                                             </tr>
                                         </thead>
@@ -121,8 +122,10 @@
                                                 <td class="fw-bold">₦82,000</td>
                                                 <td class="text-truncate" style="max-width: 200px;">We can supply standard ergonomic chairs with a 3-year warranty.</td>
                                                 <td><a href="javascript:void(0)" class="text-primary"><i class="feather-paperclip me-1"></i>quote.pdf</a></td>
+                                                <td><span class="badge bg-soft-warning text-warning">Pending</span></td>
                                                 <td class="text-end">
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#sendBargainModal">Bargain</a>
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#awardContractModal">Award</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -138,8 +141,10 @@
                                                 <td class="fw-bold">₦80,500</td>
                                                 <td class="text-truncate" style="max-width: 200px;">Offer valid for bulk purchase. Delivery included.</td>
                                                 <td><a href="javascript:void(0)" class="text-primary"><i class="feather-paperclip me-1"></i>proposal_v1.pdf</a></td>
+                                                <td><span class="badge bg-soft-info text-info">Negotiating</span></td>
                                                 <td class="text-end">
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#sendBargainModal">Bargain</a>
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#awardContractModal">Award</a>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -155,6 +160,7 @@
                                                 <td class="fw-bold">₦88,000</td>
                                                 <td class="text-truncate" style="max-width: 200px;">Premium quality chairs with headrest support.</td>
                                                 <td><a href="javascript:void(0)" class="text-primary"><i class="feather-paperclip me-1"></i>catalog.pdf</a></td>
+                                                <td><span class="badge bg-soft-danger text-danger">Rejected</span></td>
                                                 <td class="text-end">
                                                     <a href="javascript:void(0)" class="btn btn-sm btn-light-brand">View Details</a>
                                                 </td>
@@ -195,6 +201,171 @@
     </main>
     <!--! ================================================================ !-->
     <!--! [End] Main Content !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] View Bargain Modal !-->
+    <!--! ================================================================ !-->
+    <div class="modal fade" id="viewBargainModal" tabindex="-1" aria-labelledby="viewBargainModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewBargainModalLabel">Bargain Offer Received</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info" role="alert">
+                        <i class="feather-info me-2"></i> The client has requested a change to your submission. Please review their offer below.
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6 border-end">
+                            <h6 class="fw-bold mb-3 text-muted">Your Original Submission</h6>
+                            <div class="mb-2">
+                                <span class="d-block fs-12 text-muted">Price:</span>
+                                <span class="fw-bold fs-15 text-dark">₦80,500</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="d-block fs-12 text-muted">Quantity:</span>
+                                <span class="fw-bold text-dark">50</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="d-block fs-12 text-muted">Message:</span>
+                                <p class="text-dark fs-13">Offer valid for bulk purchase. Delivery included.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold mb-3 text-primary">Client's Counter Offer</h6>
+                            <div class="mb-2">
+                                <span class="d-block fs-12 text-muted">Target Price:</span>
+                                <span class="fw-bold fs-15 text-primary">₦78,000</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="d-block fs-12 text-muted">Requested Quantity:</span>
+                                <span class="fw-bold text-dark">55</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="d-block fs-12 text-muted">Note:</span>
+                                <p class="text-dark fs-13">We can increase the order to 55 units if you can reduce the unit price to ₦78,000.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-gray-100">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#counterBargainModal">Counter Offer</button>
+                    <button type="button" class="btn btn-success">Accept Offer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--! ================================================================ !-->
+    <!--! [End] View Bargain Modal !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Send Bargain Modal (Agency) !-->
+    <!--! ================================================================ !-->
+    <div class="modal fade" id="sendBargainModal" tabindex="-1" aria-labelledby="sendBargainModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendBargainModalLabel">Send Bargain Offer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning" role="alert">
+                        You are about to send a counter-offer to <strong>Tech Solutions Inc.</strong>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="offerPrice" class="form-label">Offer Price (NGN)</label>
+                            <input type="number" class="form-control" id="offerPrice" placeholder="Enter your target price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="offerQuantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="offerQuantity" placeholder="Confirm quantity">
+                        </div>
+                        <div class="mb-3">
+                            <label for="offerMessage" class="form-label">Message / Note</label>
+                            <textarea class="form-control" id="offerMessage" rows="4" placeholder="e.g., We can proceed if you agree to this price..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning">Send Bargain</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--! ================================================================ !-->
+    <!--! [End] Send Bargain Modal !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Award Contract Modal !-->
+    <!--! ================================================================ !-->
+    <div class="modal fade" id="awardContractModal" tabindex="-1" aria-labelledby="awardContractModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="awardContractModalLabel">Award Contract</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="feather-check-circle text-success display-4 mb-3"></i>
+                    <h4 class="mb-3">Confirm Award?</h4>
+                    <p class="mb-4 text-muted">You are about to award this contract to <strong>Tech Solutions Inc.</strong> for <span class="fw-bold text-dark">₦82,000</span>.</p>
+                    <div class="alert alert-light-primary text-start">
+                        <small><i class="feather-info me-1"></i> The vendor will be notified immediately. This action cannot be undone.</small>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success">Confirm Award</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--! ================================================================ !-->
+    <!--! [End] Award Contract Modal !-->
+    <!--! ================================================================ !-->
+
+    <!--! ================================================================ !-->
+    <!--! [Start] Counter Bargain Modal !-->
+    <!--! ================================================================ !-->
+    <div class="modal fade" id="counterBargainModal" tabindex="-1" aria-labelledby="counterBargainModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="counterBargainModalLabel">Send Counter Offer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="counterPrice" class="form-label">New Price (NGN)</label>
+                            <input type="number" class="form-control" id="counterPrice" value="79500">
+                        </div>
+                        <div class="mb-3">
+                            <label for="counterQuantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="counterQuantity" value="55">
+                        </div>
+                        <div class="mb-3">
+                            <label for="counterMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="counterMessage" rows="4" placeholder="Enter your justification or message..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewBargainModal">Back</button>
+                    <button type="button" class="btn btn-primary">Send Offer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--! ================================================================ !-->
+    <!--! [End] Counter Bargain Modal !-->
     <!--! ================================================================ !-->
 
     <!--! ================================================================ !-->
