@@ -6,61 +6,64 @@ document.addEventListener("DOMContentLoaded", function () {
             const placeholder = document.getElementById('navigation-placeholder');
             if (placeholder) {
                 placeholder.outerHTML = data;
+
+                // Replace feather icons in the newly injected nav
                 if (typeof feather !== 'undefined') {
                     feather.replace();
                 }
 
-                // Sidebar Toggle Logic
-                const hasMenus = document.querySelectorAll('.nxl-hasmenu > .nxl-link');
-                hasMenus.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const parent = this.parentElement;
-                        
-                        // Accordion behavior cleanup
-                        const siblings = parent.parentElement.querySelectorAll('.nxl-hasmenu.active');
-                        siblings.forEach(sibling => {
-                            if (sibling !== parent) {
-                                sibling.classList.remove('active');
-                                sibling.classList.remove('nxl-trigger');
-                                if (window.jQuery) {
-                                    $(sibling).find('.nxl-submenu').slideUp();
-                                }
-                            }
-                        });
-                        
-                        // Toggle current
-                        if (parent.classList.contains('active')) {
-                            parent.classList.remove('active');
-                            parent.classList.remove('nxl-trigger');
-                            if (window.jQuery) {
-                                $(parent).find('.nxl-submenu').slideUp();
-                            }
-                        } else {
-                            parent.classList.add('active');
-                            parent.classList.add('nxl-trigger');
-                            if (window.jQuery) {
-                                $(parent).find('.nxl-submenu').slideDown();
-                            }
-                        }
-                    });
+                // Ensure all submenus start closed
+                $('.nxl-navbar .nxl-submenu').hide();
+                $('.nxl-navbar li').removeClass('nxl-trigger active');
+
+                // Remove any previously bound click handlers, then rebind
+                $('.nxl-navbar li').off('click');
+
+                // Top-level menu items (accordion)
+                $('.nxl-navbar > li:not(.nxl-caption)').on('click', function () {
+                    if ($(this).hasClass('nxl-trigger')) {
+                        $(this).removeClass('nxl-trigger');
+                        $(this).children('.nxl-submenu').slideUp('fast');
+                    } else {
+                        $('li.nxl-trigger').children('.nxl-submenu').slideUp('fast');
+                        $('li.nxl-trigger').removeClass('nxl-trigger');
+                        $(this).addClass('nxl-trigger');
+                        $(this).children('.nxl-submenu').slideDown('fast');
+                    }
                 });
 
-                // Set Active State
-                const currentPage = window.location.pathname.split("/").pop();
-                const navLinks = document.querySelectorAll('.nxl-link'); 
-                navLinks.forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-                        link.parentElement.classList.add('active');
-                        const parentMenu = link.closest('.nxl-hasmenu');
-                        if (parentMenu) {
-                             parentMenu.classList.add('active');
-                             parentMenu.classList.add('nxl-trigger');
-                             if (window.jQuery) {
-                                 $(parentMenu).find('.nxl-submenu').show();
-                             }
-                        }
+                // Nested submenu items
+                $('.nxl-navbar > li:not(.nxl-caption) li').on('click', function (e) {
+                    e.stopPropagation();
+                    if ($(this).hasClass('nxl-trigger')) {
+                        $(this).removeClass('nxl-trigger');
+                        $(this).children('.nxl-submenu').slideUp('fast');
+                    } else {
+                        $(this).parent('.nxl-submenu').find('li.nxl-trigger').children('.nxl-submenu').slideUp('fast');
+                        $(this).parent('.nxl-submenu').find('li.nxl-trigger').removeClass('nxl-trigger');
+                        $(this).addClass('nxl-trigger');
+                        $(this).children('.nxl-submenu').slideDown('fast');
+                    }
+                });
+
+                // Init PerfectScrollbar on the navbar-content
+                if ($('.navbar-content')[0] && typeof PerfectScrollbar !== 'undefined') {
+                    new PerfectScrollbar('.navbar-content', {
+                        wheelSpeed: 0.5,
+                        swipeEasing: false,
+                        suppressScrollX: true,
+                        wheelPropagation: true,
+                        minScrollbarLength: 40
+                    });
+                }
+
+                // Set active state for current page
+                var currentUrl = window.location.href.split(/[?#]/)[0];
+                $(".nxl-navigation .nxl-navbar a").each(function () {
+                    if (this.href == currentUrl && "" != $(this).attr("href")) {
+                        $(this).parent("li").addClass("active");
+                        $(this).parent("li").parent().parent(".nxl-hasmenu").addClass("active").addClass("nxl-trigger");
+                        $(this).parent("li").parent().parent(".nxl-hasmenu").parent().parent(".nxl-hasmenu").addClass("active").addClass("nxl-trigger");
                     }
                 });
             }
