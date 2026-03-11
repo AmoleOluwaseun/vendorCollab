@@ -100,94 +100,104 @@
                             <div class="card-body">
                                 <form action="vendors.html" class="w-100">
                                     <div class="row">
-                                        <div class="col-md-12 mb-4">
-                                            <label class="form-label">Business Name <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="e.g. Adebayo Constructions Ltd." required>
+                                    <!-- Part 1: Company Profile -->
+                                    <div class="mb-5">
+                                        <h6 class="fw-bold text-primary mb-3">Part 1: Company Profile</h6>
+                                        <div class="row">
+                                            <div class="col-md-12 mb-4">
+                                                <label class="form-label">Official Registered Company Name <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Enter registration name" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">Contact Person <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" placeholder="Full Name" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                                <input type="email" class="form-control" placeholder="business@email.com" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                                <input type="tel" class="form-control" placeholder="e.g. +234 801 234 5678" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">Tax ID Number (TIN) <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">VAT Registered? <span class="text-danger">*</span></label>
+                                                <select class="form-control" required>
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">State <span class="text-danger">*</span></label>
+                                                <select class="form-control" data-select2-selector="state" required>
+                                                    <option value="" disabled selected>Select state</option>
+                                                    <option value="abia">Abia</option>
+                                                    <option value="adamawa">Adamawa</option>
+                                                    <!-- ... states ... -->
+                                                    <option value="lagos">Lagos</option>
+                                                    <!-- ... other states ... -->
+                                                </select>
+                                            </div>
+                                            <div class="col-12 mb-4">
+                                                <label class="form-label">Business Address <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" rows="2" required></textarea>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label class="form-label">Contact Person Name <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="e.g. Chukwuemeka Okonkwo" required>
+                                    </div>
+
+                                    <!-- Part 2: Directorate & Management -->
+                                    <div class="mb-5">
+                                        <h6 class="fw-bold text-primary mb-3">Part 2: Directorate & Management</h6>
+                                        <div class="row">
+                                            <div class="col-12 mb-4">
+                                                <label class="form-label">Shareholders <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" rows="2" placeholder="List major shareholders" required></textarea>
+                                            </div>
+                                            <div class="col-12 mb-4">
+                                                <label class="form-label">Company Directorate <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" rows="2" required></textarea>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label class="form-label">Email Address <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" placeholder="e.g. info@business.com" required>
+                                    </div>
+
+                                    <!-- Part 3: Products/Services -->
+                                    <div class="mb-5">
+                                        <h6 class="fw-bold text-primary mb-3">Part 3: Products/Services</h6>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">Vendor Classification <span class="text-danger">*</span></label>
+                                                <select class="form-control" required>
+                                                    <option value="manufacturer">Manufacturer</option>
+                                                    <option value="agent">Agent / Distributor</option>
+                                                    <option value="trader">Trader</option>
+                                                    <option value="service_provider">Service Provider</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <label class="form-label">Target Commodities <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" required>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label class="form-label">Phone Number <span class="text-danger">*</span></label>
-                                            <input type="tel" class="form-control" placeholder="e.g. +234 801 234 5678" required>
+                                    </div>
+
+                                    <!-- Status -->
+                                    <div class="mb-4">
+                                        <h6 class="fw-bold text-primary mb-3">System Settings</h6>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="form-label">Account Status <span class="text-danger">*</span></label>
+                                                <select class="form-control" required>
+                                                    <option value="active" selected>Active</option>
+                                                    <option value="inactive">Inactive</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label class="form-label">Service Category <span class="text-danger">*</span></label>
-                                            <select class="form-control" data-select2-selector="category" required>
-                                                <option value="" disabled selected>Select a category</option>
-                                                <option value="it_services">IT Services</option>
-                                                <option value="construction">Construction</option>
-                                                <option value="logistics">Logistics & Haulage</option>
-                                                <option value="consulting">Consulting</option>
-                                                <option value="manufacturing">Manufacturing</option>
-                                                <option value="catering">Catering & Food Services</option>
-                                                <option value="cleaning">Cleaning & Janitorial</option>
-                                                <option value="security">Security Services</option>
-                                                <option value="printing">Printing & Branding</option>
-                                                <option value="office_supplies">Office Supplies</option>
-                                                <option value="electrical">Electrical & Power</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label class="form-label">State <span class="text-danger">*</span></label>
-                                            <select class="form-control" data-select2-selector="state" required>
-                                                <option value="" disabled selected>Select state</option>
-                                                <option value="abia">Abia</option>
-                                                <option value="adamawa">Adamawa</option>
-                                                <option value="akwa_ibom">Akwa Ibom</option>
-                                                <option value="anambra">Anambra</option>
-                                                <option value="bauchi">Bauchi</option>
-                                                <option value="bayelsa">Bayelsa</option>
-                                                <option value="benue">Benue</option>
-                                                <option value="borno">Borno</option>
-                                                <option value="cross_river">Cross River</option>
-                                                <option value="delta">Delta</option>
-                                                <option value="ebonyi">Ebonyi</option>
-                                                <option value="edo">Edo</option>
-                                                <option value="ekiti">Ekiti</option>
-                                                <option value="enugu">Enugu</option>
-                                                <option value="fct">FCT - Abuja</option>
-                                                <option value="gombe">Gombe</option>
-                                                <option value="imo">Imo</option>
-                                                <option value="jigawa">Jigawa</option>
-                                                <option value="kaduna">Kaduna</option>
-                                                <option value="kano">Kano</option>
-                                                <option value="katsina">Katsina</option>
-                                                <option value="kebbi">Kebbi</option>
-                                                <option value="kogi">Kogi</option>
-                                                <option value="kwara">Kwara</option>
-                                                <option value="lagos">Lagos</option>
-                                                <option value="nasarawa">Nasarawa</option>
-                                                <option value="niger">Niger</option>
-                                                <option value="ogun">Ogun</option>
-                                                <option value="ondo">Ondo</option>
-                                                <option value="osun">Osun</option>
-                                                <option value="oyo">Oyo</option>
-                                                <option value="plateau">Plateau</option>
-                                                <option value="rivers">Rivers</option>
-                                                <option value="sokoto">Sokoto</option>
-                                                <option value="taraba">Taraba</option>
-                                                <option value="yobe">Yobe</option>
-                                                <option value="zamfara">Zamfara</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6 mb-4">
-                                            <label class="form-label">Status <span class="text-danger">*</span></label>
-                                            <select class="form-control" data-select2-selector="status" required>
-                                                <option value="active" selected>Active</option>
-                                                <option value="inactive">Inactive</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12 mb-4">
-                                            <label class="form-label">Business Address <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" placeholder="e.g. 25 Marina Street, Lagos Island" required>
-                                        </div>
+                                    </div>
+
                                     </div>
                                     <div class="d-flex justify-content-end gap-2 mt-4">
                                         <a href="vendors.html" class="btn btn-light-brand">Cancel</a>
