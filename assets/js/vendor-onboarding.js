@@ -1,11 +1,17 @@
 /**
  * vendor-onboarding.js
- * Handles multi-step form navigation, validation, and preview generation.
+ * Handles multi-step form navigation, validation, and refined preview generation.
  */
 
 $(document).ready(function() {
     let currentStep = 1;
     const totalSteps = 6;
+    let templateHtml = "";
+
+    // Load the official template
+    $.get('document_templates/vendor_onboarding_form.html', function(data) {
+        templateHtml = data;
+    });
 
     // Show step 1 by default
     showStep(currentStep);
@@ -16,6 +22,7 @@ $(document).ready(function() {
             if (currentStep < totalSteps) {
                 currentStep++;
                 showStep(currentStep);
+                window.scrollTo(0, 0);
             }
         }
     });
@@ -25,12 +32,13 @@ $(document).ready(function() {
         if (currentStep > 1) {
             currentStep--;
             showStep(currentStep);
+            window.scrollTo(0, 0);
         }
     });
 
     // Preview button click
     $('#btn-preview').on('click', function() {
-        generatePreview();
+        generateRefinedPreview();
         $('#previewModal').modal('show');
     });
 
@@ -69,7 +77,10 @@ $(document).ready(function() {
         const currentStepEl = $(`.wizard-step[data-step="${step}"]`);
         
         currentStepEl.find('input[required], select[required], textarea[required]').each(function() {
-            if (!$(this).val()) {
+            if (!$(this).val() && $(this).attr('type') !== 'checkbox') {
+                $(this).addClass('is-invalid');
+                isValid = false;
+            } else if ($(this).attr('type') === 'checkbox' && !$(this).is(':checked')) {
                 $(this).addClass('is-invalid');
                 isValid = false;
             } else {
@@ -77,82 +88,38 @@ $(document).ready(function() {
             }
         });
 
-        if (!isValid) {
-            // Optional: Show alert or scroll to first error
-            console.log('Validation failed for step ' + step);
-        }
-
         return isValid;
     }
 
-    function generatePreview() {
+    function generateRefinedPreview() {
+        if (!templateHtml) {
+            alert("Template not loaded yet. Please try again in a moment.");
+            return;
+        }
+
         const formData = {};
         $('form#onboardingForm').serializeArray().forEach(item => {
             formData[item.name] = item.value;
         });
 
-        let previewHtml = `
-            <div class="onboarding-preview-container">
-                <div class="preview-header">
-                    <h1>NSP VENDOR ONBOARDING FORM</h1>
-                    <p>OFFICIAL REGISTRATION DOCUMENT</p>
-                </div>
+        // Create a temporary element to manipulate the template
+        let $previewBody = $('<div>').html(templateHtml);
 
-                <div class="preview-section">
-                    <div class="preview-section-title">PART 1: Company Profile</div>
-                    <div class="preview-grid">
-                        <div class="preview-item">
-                            <span class="preview-label">Company Name</span>
-                            <span class="preview-value">${formData.company_name || ''}</span>
-                        </div>
-                        <div class="preview-item">
-                            <span class="preview-label">Contact Person</span>
-                            <span class="preview-value">${formData.contact_person || ''}</span>
-                        </div>
-                        <div class="preview-item">
-                            <span class="preview-label">Email Address</span>
-                            <span class="preview-value">${formData.email || ''}</span>
-                        </div>
-                        <div class="preview-item">
-                            <span class="preview-label">TIN</span>
-                            <span class="preview-value">${formData.tin || ''}</span>
-                        </div>
-                    </div>
-                </div>
+        // Replace basic text fields
+        $previewBody.find('[data-field]').each(function() {
+            const fieldName = $(this).data('field');
+            if (formData[fieldName]) {
+                $(this).text(formData[fieldName]);
+            } else {
+                $(this).html('&nbsp;'); // Keep the line if empty
+            }
+        });
 
-                <div class="preview-section">
-                    <div class="preview-section-title">PART 2: Directorate & Executive Management</div>
-                    <div class="preview-item">
-                        <span class="preview-label">Shareholders</span>
-                        <span class="preview-value">${formData.shareholders || 'N/A'}</span>
-                    </div>
-                </div>
+        // Special handling for checkboxes/switches in the template
+        if (formData.vendor_classification) {
+            // Simplified check for now
+        }
 
-                <div class="preview-section">
-                    <div class="preview-section-title">PART 3: Company Product/Services</div>
-                    <div class="preview-item">
-                        <span class="preview-label">Classification</span>
-                        <span class="preview-value">${formData.vendor_classification || ''}</span>
-                    </div>
-                </div>
-
-                <div class="preview-section">
-                    <div class="preview-section-title">Acknowledgement</div>
-                    <p>I confirmed that I have read and understood the Code of Conduct.</p>
-                    <div class="preview-grid">
-                        <div class="preview-item">
-                            <span class="preview-label">Authorized Representative</span>
-                            <span class="preview-value">${formData.representative_name || ''}</span>
-                        </div>
-                        <div class="preview-item">
-                            <span class="preview-label">Date</span>
-                            <span class="preview-value">${new Date().toLocaleDateString()}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        $('#previewContent').html(previewHtml);
+        $('#previewContent').html('<div class="onboarding-preview-container">' + $previewBody.html() + '</div>');
     }
 });
