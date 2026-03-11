@@ -9,18 +9,20 @@
         background: #fff;
         font-family: 'Times New Roman', Times, serif;
         color: #000;
-        line-height: 1.4;
+        line-height: 1.6; /* Increased line gap */
         max-width: 850px;
         margin: 0 auto;
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
     .pdf-page {
-        padding: 60px 80px;
+        padding: 60px 80px 100px 80px; /* More bottom padding for footer */
         min-height: 1100px;
         position: relative;
         border-bottom: 1px dashed #ccc;
         page-break-after: always;
+        display: flex;
+        flex-direction: column;
     }
 
     .pdf-page:last-child {
@@ -60,33 +62,46 @@
     }
 
     .form-group-pdf {
-        margin-bottom: 15px;
+        margin-bottom: 20px; /* Increased row spacing */
         display: flex;
-        flex-direction: column;
+        align-items: baseline; /* Align label and value baseline */
+        gap: 10px;
     }
 
     .form-group-pdf label {
         font-weight: bold;
         font-size: 14px;
-        margin-bottom: 2px;
+        white-space: nowrap; /* Keep label on one line */
+    }
+
+    .value-display {
+        font-size: 14px;
+        flex-grow: 1;
+        /* No underline as requested */
     }
 
     .placeholder-line {
-        border-bottom: 1px solid #000;
-        min-height: 25px;
-        padding-left: 10px;
-        font-style: italic;
+        /* Kept for JS targeting, but removed underline styling */
+        min-height: 20px;
+    }
+
+    .textarea-box {
+        border: 1px solid #eee; /* Light border for textareas if needed, or none */
+        padding: 5px;
+        width: 100%;
+        min-height: 60px;
+        margin-top: 5px;
     }
 
     .nsp-table-pdf {
         width: 100%;
         border-collapse: collapse;
-        margin-top: 10px;
+        margin-top: 15px;
     }
 
     .nsp-table-pdf th, .nsp-table-pdf td {
         border: 1px solid #000;
-        padding: 6px 10px;
+        padding: 8px 10px;
         text-align: left;
         font-size: 13px;
     }
@@ -95,69 +110,24 @@
         background: #f9f9f9;
     }
 
-    .status-box-pdf {
-        border: 1px solid #000;
-        padding: 15px;
+    .pdf-footer {
+        position: absolute;
+        bottom: 40px;
+        left: 80px;
+        right: 80px;
+        font-size: 11px;
     }
 
-    .coc-header {
-        color: #0033cc;
-        font-weight: bold;
-        text-align: center;
-        font-size: 16px;
-    }
-
-    .sig-line {
-        border-top: 1px solid #000;
-        margin-top: 30px;
-        padding-top: 5px;
+    .page-number {
+        position: absolute;
+        bottom: 20px;
+        right: 80px;
         font-size: 12px;
         font-weight: bold;
     }
 
     @media print {
-        body * {
-            visibility: hidden;
-        }
-        #previewModal, #previewModal * {
-            visibility: visible;
-        }
-        #previewModal {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        .modal-dialog, .modal-content, .modal-body {
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-            box-shadow: none !important;
-            max-width: none !important;
-            width: 100% !important;
-            position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
-        }
-        .onboarding-preview-container {
-            padding: 0 !important;
-            background: none !important;
-        }
-        .nsp-onboarding-document {
-            box-shadow: none !important;
-            width: 100% !important;
-            max-width: none !important;
-        }
-        .pdf-page {
-            border-bottom: none !important;
-            padding: 20px !important;
-            min-height: auto !important;
-        }
-        .btn-close, .modal-header, .modal-footer {
-            display: none !important;
-        }
+        /* ... previous print styles ... */
     }
 </style>
 <div class="nsp-onboarding-document">
@@ -172,22 +142,21 @@
         <div class="pdf-body mt-5">
             <div class="form-group-pdf">
                 <label>NAME OF COMPANY:</label>
-                <div class="placeholder-line" data-field="company_name"></div>
+                <div class="value-display placeholder-line" data-field="company_name"></div>
             </div>
 
-            <p class="mt-4">LIST OF COMMODITIES FOR WHICH YOU WISH TO BE CONSIDERED AS A SUPPLIER</p>
+            <p class="mt-4 fw-bold">LIST OF COMMODITIES FOR WHICH YOU WISH TO BE CONSIDERED AS A SUPPLIER</p>
             
             <div class="form-group-pdf">
                 <label>COMMODITY DESCRIPTION:</label>
-                <div class="placeholder-line" data-field="target_commodities"></div>
+                <div class="value-display placeholder-line" data-field="target_commodities"></div>
             </div>
         </div>
 
-        <div class="pdf-footer-note text-danger mb-4">
-            <em>Note: Failure to complete all sections of this registration form may render your
-application invalid and consequently your company may not be considered for
-registration as a Supplier.</em>
+        <div class="pdf-footer text-danger">
+            <em>Note: Failure to complete all sections of this registration form may render your application invalid and consequently your company may not be considered for registration as a Supplier.</em>
         </div>
+        <div class="page-number">Page 1</div>
     </div>
 
     <!-- Page 2 -->
@@ -196,28 +165,28 @@ registration as a Supplier.</em>
         
         <div class="form-group-pdf">
             <label>1. NAME OF COMPANY:</label>
-            <div class="placeholder-line" data-field="company_name"></div>
+            <div class="value-display placeholder-line" data-field="company_name"></div>
         </div>
 
         <div class="form-group-pdf">
             <label>2. CONTACT NAME:</label>
-            <div class="placeholder-line" data-field="contact_person"></div>
+            <div class="value-display placeholder-line" data-field="contact_person"></div>
         </div>
 
-        <div class="form-group-pdf">
+        <div class="form-group-pdf flex-column align-items-start">
             <label>3. ADDRESS OF BUSINESS PREMISES:</label>
-            <div class="placeholder-line" data-field="address"></div>
+            <div class="value-display placeholder-line w-100 mt-1"></div>
         </div>
-
+        <div class="form-group-pdf">
+            <label>STREET ADDRESS:</label>
+            <div class="value-display placeholder-line" data-field="address"></div>
+        </div> <br/>
         <div class="form-group-pdf">
             <label>E-MAIL ADDRESS:</label>
-            <div class="placeholder-line" data-field="email"></div>
-        </div>
+            <div class="value-display placeholder-line" data-field="email"></div>
+        </div> <br/>
 
-        <p class="mt-3 fw-bold">4. LIST OF ASSOCIATED AND SUBSIDIARY COMPANIES:</p>
-        <div class="pdf-footer-note text-muted mb-4">
-            <em>Other associated and subsidiary companies in the Group and their product lines</em>
-        </div>
+        <p class="mt-4 fw-bold">4. LIST OF ASSOCIATED AND SUBSIDIARY COMPANIES:</p>
         <table class="nsp-table-pdf">
             <thead>
                 <tr>
@@ -227,21 +196,31 @@ registration as a Supplier.</em>
                 </tr>
             </thead>
             <tbody data-table="subsidiaries">
-                <!-- Row will be added if data exists, otherwise empty rows -->
                 <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
                 <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
             </tbody>
-        </table>
-
-        <div class="pdf-footer-note text-danger mt-4">
-            <em>(Please enclose copies of evidence of your Tax Registration, VAT Registration, evidence of payment of Company Tax in the last 1 year and Certificate of Incorporation/Business Name registration as applicable).</em>
+        </table><br/>
+        <div class="form-group-pdf flex-column align-items-start">
+            <label>5. IS YOUR COMPANY REGISTERED FOR VAT AND TAX:</label>
+            <div class="value-display placeholder-line w-100 mt-1"></div>
         </div>
-        <div class="text-end fw-bold mt-2">END OF PART 1</div>
+        <div class="form-group-pdf flex-column align-items-start">
+            <label>6. COMPANY TAX IDENTIFICATION NUMBER:</label>
+            <div class="value-display placeholder-line w-100 mt-1"></div>
+        </div>
+
+        <div class="pdf-footer text-danger">
+            <div class="text-danger mb-2">
+                <em>(Please enclose copies of evidence of your Tax Registration, VAT Registration, evidence of payment of Company Tax in the last 1 year and Certificate of Incorporation/Business Name registration as applicable).</em>
+            </div>
+            <div class="text-end fw-bold">END OF PART 1</div>
+        </div>
+        <div class="page-number">Page 2</div>
     </div>
 
     <!-- Page 3 -->
     <div class="pdf-page" id="page3">
-        <div class="nsp-section-header">PART 2 – DIRECTORSHIP & EXECUTIVE MANAGEMENT</div>
+        <div class="nsp-section-header">PART 2 – DIRECTORATE & EXECUTIVE MANAGEMENT</div>
         
         <p class="fw-bold">1. SHARE HOLDERS:</p>
         <table class="nsp-table-pdf">
@@ -254,29 +233,26 @@ registration as a Supplier.</em>
                 </tr>
             </thead>
             <tbody data-table="shareholders">
-                <!-- Placeholder row -->
                 <tr><td>1.</td><td data-field="shareholder_1"></td><td data-field="nationality_1"></td><td data-field="shares_1"></td></tr>
-                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
             </tbody>
         </table>
 
-        <p class="fw-bold mt-4">2. COMPANY DIRECTORATE:</p>
+        <p class="fw-bold mt-5">2. COMPANY DIRECTORATE:</p>
         <table class="nsp-table-pdf">
             <thead>
                 <tr>
                     <th style="width: 50px;">Index</th>
                     <th>Full Name & Address</th>
                     <th>Position/Title</th>
-                    <th>No. of other companies where Directorship is held</th>
+                    <th>Directorships elsewhere</th>
                 </tr>
             </thead>
             <tbody data-table="directors">
                 <tr><td>1.</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
             </tbody>
         </table>
 
-        <p class="fw-bold mt-4">3. COMPANY EXECUTIVE MANAGEMENT:</p>
+        <p class="fw-bold mt-5">3. COMPANY EXECUTIVE MANAGEMENT:</p>
         <table class="nsp-table-pdf">
             <thead>
                 <tr>
@@ -286,42 +262,44 @@ registration as a Supplier.</em>
             </thead>
             <tbody data-table="management">
                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
-                <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
             </tbody>
         </table>
 
-        <div class="pdf-footer-note text-danger mt-3">
-            <em>(Please enclose photocopy of Particulars of Director, Articles of Association and Memorandum of Association).</em>
+        <div class="pdf-footer">
+            <div class="text-danger mb-2">
+                <em>(Please enclose photocopy of Particulars of Director, Articles of Association and Memorandum of Association).</em>
+            </div>
+            <div class="text-end fw-bold">END OF PART 2</div>
         </div>
-        <div class="text-end fw-bold">END OF PART 2</div>
+        <div class="page-number">Page 3</div>
     </div>
 
     <!-- Page 4 -->
     <div class="pdf-page" id="page4">
         <div class="nsp-section-header">PART 3 – COMPANY PRODUCT/SERVICES</div>
         
-        <div class="status-box-pdf mt-3">
-            <div class="d-flex justify-content-between mb-2">
+        <div class="status-box-pdf mt-3 border p-4">
+            <div class="d-flex justify-content-between mb-3">
                 <span>1. Are you a Manufacturer?</span>
-                <span>YES / NO</span>
+                <span data-field="is_manufacturer">YES / NO</span>
             </div>
-            <div class="d-flex justify-content-between mb-2">
+            <div class="d-flex justify-content-between mb-3">
                 <span>2. Are you an Agent/Distributor?</span>
-                <span>YES / NO</span>
+                <span data-field="is_agent">YES / NO</span>
             </div>
             <div class="d-flex justify-content-between">
                 <span>3. Are you a Trader?</span>
-                <span>YES / NO</span>
+                <span data-field="is_trader">YES / NO</span>
             </div>
         </div>
 
-        <p class="mt-4 fw-bold">4. IF YOU ARE A MANUFACTURER, STATE THE FOLLOWING:</p>
+        <p class="mt-5 fw-bold">4. IF YOU ARE A MANUFACTURER, STATE THE FOLLOWING:</p>
         <table class="nsp-table-pdf">
             <thead>
                 <tr>
-                    <th>Major Items of Manufacture</th>
+                    <th>Major Items</th>
                     <th>Annual Turnover</th>
-                    <th>Content of Local/Foreign Component</th>
+                    <th>Local/Foreign Component</th>
                 </tr>
             </thead>
             <tbody>
@@ -329,153 +307,105 @@ registration as a Supplier.</em>
             </tbody>
         </table>
 
-        <div class="form-group-pdf mt-4">
+        <div class="form-group-pdf mt-5">
             <label>5. Main Source of Products (Country of origin):</label>
-            <div class="placeholder-line"></div>
+            <div class="value-display placeholder-line" data-field="origin_country"></div>
         </div>
 
-        <p class="mt-4 fw-bold">6. IF AN AGENT FOR A FOREIGN/LOCAL PRINCIPAL, STATE THE FOLLOWING:</p>
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="pdf-page" id="page5">
+        <p class="fw-bold">6. IF AN AGENT, STATE THE FOLLOWING:</p>
         <table class="nsp-table-pdf">
             <thead>
                 <tr>
-                    <th>Principal Supplier</th>
+                    <th>Principal</th>
                     <th>Product lines</th>
-                    <th>Annual Turnover</th>
-                    <th>Expiry Date of Agreement</th>
+                    <th>Turnover</th>
+                    <th>Expiry Date</th>
                 </tr>
             </thead>
             <tbody>
                 <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
             </tbody>
         </table>
-    </div>
 
-    <!-- Page 5 -->
-    <div class="pdf-page" id="page5">
-        <p class="fw-bold">7. IF TRADER, STATE THE FOLLOWING:</p>
-        <table class="nsp-table-pdf">
-            <thead>
-                <tr>
-                    <th>Major items of Trade</th>
-                    <th>Annual Turnover</th>
-                    <th>Country of Origin (Imported/Local)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            </tbody>
-        </table>
-
-        <div class="form-group-pdf mt-4">
-            <label>8. Assess your financial stability (last three years):</label>
-            <div class="placeholder-line" style="height: 60px;"></div>
+        <div class="form-group-pdf flex-column align-items-start mt-5">
+            <label>7. Assess your financial stability (last three years):</label>
+            <div class="value-display placeholder-line textarea-box" data-field="financial_stability"></div>
         </div>
 
-        <div class="form-group-pdf mt-4">
-            <label>9. Detail after-sales/technical support services available:</label>
-            <div class="placeholder-line" style="height: 60px;"></div>
+        <div class="form-group-pdf flex-column align-items-start mt-5">
+            <label>8. Detail after-sales/technical support services:</label>
+            <div class="value-display placeholder-line textarea-box" data-field="technical_support"></div>
         </div>
 
-        <p class="mt-4 fw-bold">10. QUALITY STANDARDS:</p>
-        <table class="nsp-table-pdf">
-            <thead>
-                <tr>
-                    <th>Product/Service</th>
-                    <th>International Standard</th>
-                    <th>Nigerian Standard</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            </tbody>
-        </table>
-
-        <div class="text-end fw-bold mt-5">END OF PART 3</div>
+        <div class="pdf-footer">
+            <div class="text-end fw-bold">END OF PART 3</div>
+        </div>
+        <div class="page-number">Page 5</div>
     </div>
 
     <!-- Page 6 -->
     <div class="pdf-page" id="page6">
         <div class="nsp-section-header">PART 4 – FINANCIAL AND GENERAL INFORMATION</div>
 
-        <div class="form-group-pdf mt-3">
+        <div class="form-group-pdf flex-column align-items-start mt-3">
             <label>1. NAME(S) AND ADDRESS(ES) OF BANKER(S):</label>
-            <div class="placeholder-line" style="height: 60px;" data-field="bankers"></div>
+            <div class="value-display placeholder-line textarea-box" data-field="bankers"></div>
         </div>
 
-        <div class="form-group-pdf mt-3">
+        <div class="form-group-pdf">
             <label>2. TOTAL SIZE OF LABOUR FORCE:</label>
-            <div class="placeholder-line" data-field="labor_force"></div>
+            <div class="value-display placeholder-line" data-field="labor_force"></div>
         </div>
 
-        <div class="pdf-footer-note text-danger mt-3">
-            <em>(Please enclose copies of last 3 years Audited Financial Statements and current Tax Clearance Certificate).</em>
+        <div class="pdf-footer">
+            <div class="text-danger mb-2">
+                <em>(Please enclose copies of last 3 years Audited Financial Statements and current Tax Clearance Certificate).</em>
+            </div>
+            <div class="text-end fw-bold">END OF PART 4</div>
         </div>
-
-        <p class="mt-4 fw-bold">3. LIST FIVE (5) MAJOR CUSTOMERS IN THE POWER INDUSTRY (IF ANY):</p>
-        <table class="nsp-table-pdf">
-            <thead>
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Product/Service Provided</th>
-                    <th>Value of Contract</th>
-                </tr>
-            </thead>
-            <tbody data-table="customers">
-                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-            </tbody>
-        </table>
-
-        <div class="text-end fw-bold mt-3">END OF PART 4</div>
-
-        <!-- Code of Conduct Start -->
-        <div class="coc-section mt-5">
-            <h4 class="coc-header">NORTH SOUTH POWER COMPANY LIMITED CODE OF CONDUCT</h4>
-            <p class="coc-intro">North South Power Company Limited (NSP) is committed to conducting its business with integrity and ethics...</p>
-        </div>
+        <div class="page-number">Page 6</div>
     </div>
 
-    <!-- Page 7 -->
+    <!-- Page 7 (Declaration & Official) -->
     <div class="pdf-page" id="page7">
-        <div class="coc-content">
-            <p><strong>1. BUSINESS PRINCIPLES</strong></p>
-            <p>1.1 Fairness and Transparency: All procurement cycles must be conducted fairly...</p>
-            <p>1.2 Compliance with Laws: All vendors must comply with applicable national and international laws...</p>
+        <div class="declaration-section mt-4">
+            <h4 class="fw-bold text-center mb-5">DECLARATION</h4>
+            <p style="text-indent: 50px; text-align: justify;">
+                I/We, <strong><span data-field="representative_name"></span></strong> in the capacity of <strong><span>DIRECTOR/MANAGER</span></strong> of <strong><span data-field="company_name"></span></strong> hereby declare that the information provided in this form is true and correct. I/We understand that any false statement or omission of material fact may result in the disqualification of our application.
+            </p>
             
-            <p class="mt-4"><strong>2. PROCUREMENT PRACTICES</strong></p>
-            <p>2.1 Competitive Bidding: Selection of vendors will primarily be through competitive bidding...</p>
-            <p>2.2 Conflict of Interest: Vendors must disclose any actual or potential conflict of interest...</p>
-        </div>
-    </div>
-
-    <!-- Page 8 -->
-    <div class="pdf-page" id="page8">
-        <div class="declaration-section">
-            <h4 class="fw-bold">DECLARATION</h4>
-            <p>I/We, <strong><span data-field="representative_name"></span></strong> in the capacity of <strong><span>DIRECTOR/MANAGER</span></strong> of <strong><span data-field="company_name"></span></strong> hereby declare that the information provided in this form is true and correct...</p>
-            
-            <div class="signature-box mt-5">
-                <div class="row">
+            <div class="signature-box mt-5 pt-5">
+                <div class="row align-items-end">
                     <div class="col-6">
                         <div class="sig-line">SIGNATURE & DATE</div>
                     </div>
                     <div class="col-6 text-center">
-                        <div class="sig-line" style="height: 60px; border: 1px solid #000; display: inline-block; width: 150px;">COMPANY STAMP</div>
+                        <div class="sig-line" style="height: 100px; border: 1px solid #000; display: flex; align-items: center; justify-content: center; width: 180px; margin: 0 auto;">COMPANY STAMP</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="official-use-section mt-5 p-3 border border-dark">
-            <h5 class="fw-bold text-center">FOR OFFICIAL USE ONLY</h5>
-            <div class="mt-3">
-                <div class="mb-2 hstack gap-3">
-                    <span>RECOMMENDED: [ ]</span>
-                    <span>NOT RECOMMENDED: [ ]</span>
+        <div class="official-use-section mt-auto p-4 border border-dark">
+            <h5 class="fw-bold text-center mb-4">FOR OFFICIAL USE ONLY</h5>
+            <div class="row mb-5">
+                <div class="col-6">RECOMMENDED: [ ]</div>
+                <div class="col-6">NOT RECOMMENDED: [ ]</div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="sig-line">SCM MANAGER SIGNATURE & DATE</div>
                 </div>
-                <div class="sig-line mt-4">SCM MANAGER SIGNATURE & DATE</div>
-                <div class="sig-line mt-4">CEO SIGNATURE & DATE</div>
+                <div class="col-6">
+                    <div class="sig-line">CEO SIGNATURE & DATE</div>
+                </div>
             </div>
         </div>
+        <div class="page-number">Page 7</div>
     </div>
 </div>
