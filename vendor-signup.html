@@ -22,6 +22,30 @@
     <!--! END: Vendors CSS-->
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css">
+    <style>
+        .step-indicator {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #999;
+            border: 2px solid #ddd;
+        }
+        .step-indicator.active {
+            background: #28a745;
+            color: #fff;
+            border-color: #28a745;
+        }
+        .wizard-step h5 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
     <!--! END: Custom CSS-->
     <!--[if lt IE 9]>
 		<script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,138 +59,215 @@
     <!--! ================================================================ !-->
     <main class="auth-minimal-wrapper">
         <div class="auth-minimal-inner">
-            <div class="minimal-card-wrapper" style="max-width: 700px;">
+            <div class="minimal-card-wrapper" style="max-width: 850px;">
                 <div class="card mb-4 mt-5 mx-4 mx-sm-0 position-relative">
                     <div class="wd-50 bg-white p-2 rounded-circle shadow-lg position-absolute translate-middle top-0 start-50">
                         <img src="assets/images/logo-abbr.png" alt="" class="img-fluid">
                     </div>
                     <div class="card-body p-sm-5">
-                        <h2 class="fs-20 fw-bolder mb-4">Vendor Registration</h2>
-                        <h4 class="fs-13 fw-bold mb-2">Join our Vendor Platform</h4>
-                        <p class="fs-12 fw-medium text-muted">Register your business to become a verified vendor. Fill in the details below to get started.</p>
-                        <form action="index.html" class="w-100 mt-4 pt-2">
-                            <div class="row">
-                                <div class="col-12 mb-4">
-                                    <label class="form-label">Business Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="e.g. Adebayo Constructions Ltd." required>
-                                </div>
-                                <div class="col-12 mb-4">
-                                    <label class="form-label">Contact Person Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="e.g. Chukwuemeka Okonkwo" required>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">Email Address <span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" placeholder="e.g. info@business.com" required>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">Phone Number <span class="text-danger">*</span></label>
-                                    <input type="tel" class="form-control" placeholder="e.g. +234 801 234 5678" required>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">Service Category <span class="text-danger">*</span></label>
-                                    <select class="form-control" required>
-                                        <option value="" disabled selected>Select a category</option>
-                                        <option value="it_services">IT Services</option>
-                                        <option value="construction">Construction</option>
-                                        <option value="logistics">Logistics & Haulage</option>
-                                        <option value="consulting">Consulting</option>
-                                        <option value="manufacturing">Manufacturing</option>
-                                        <option value="catering">Catering & Food Services</option>
-                                        <option value="cleaning">Cleaning & Janitorial</option>
-                                        <option value="security">Security Services</option>
-                                        <option value="printing">Printing & Branding</option>
-                                        <option value="office_supplies">Office Supplies</option>
-                                        <option value="electrical">Electrical & Power</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">State <span class="text-danger">*</span></label>
-                                    <select class="form-control" required>
-                                        <option value="" disabled selected>Select state</option>
-                                        <option value="abia">Abia</option>
-                                        <option value="adamawa">Adamawa</option>
-                                        <option value="akwa_ibom">Akwa Ibom</option>
-                                        <option value="anambra">Anambra</option>
-                                        <option value="bauchi">Bauchi</option>
-                                        <option value="bayelsa">Bayelsa</option>
-                                        <option value="benue">Benue</option>
-                                        <option value="borno">Borno</option>
-                                        <option value="cross_river">Cross River</option>
-                                        <option value="delta">Delta</option>
-                                        <option value="ebonyi">Ebonyi</option>
-                                        <option value="edo">Edo</option>
-                                        <option value="ekiti">Ekiti</option>
-                                        <option value="enugu">Enugu</option>
-                                        <option value="fct">FCT - Abuja</option>
-                                        <option value="gombe">Gombe</option>
-                                        <option value="imo">Imo</option>
-                                        <option value="jigawa">Jigawa</option>
-                                        <option value="kaduna">Kaduna</option>
-                                        <option value="kano">Kano</option>
-                                        <option value="katsina">Katsina</option>
-                                        <option value="kebbi">Kebbi</option>
-                                        <option value="kogi">Kogi</option>
-                                        <option value="kwara">Kwara</option>
-                                        <option value="lagos">Lagos</option>
-                                        <option value="nasarawa">Nasarawa</option>
-                                        <option value="niger">Niger</option>
-                                        <option value="ogun">Ogun</option>
-                                        <option value="ondo">Ondo</option>
-                                        <option value="osun">Osun</option>
-                                        <option value="oyo">Oyo</option>
-                                        <option value="plateau">Plateau</option>
-                                        <option value="rivers">Rivers</option>
-                                        <option value="sokoto">Sokoto</option>
-                                        <option value="taraba">Taraba</option>
-                                        <option value="yobe">Yobe</option>
-                                        <option value="zamfara">Zamfara</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 mb-4">
-                                    <label class="form-label">Business Address <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" placeholder="e.g. 25 Marina Street, Lagos Island" required>
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">Password <span class="text-danger">*</span></label>
-                                    <div class="generate-pass">
-                                        <div class="input-group field">
-                                            <input type="password" class="form-control password" id="newPassword" placeholder="Create a password" required>
-                                            <div class="input-group-text c-pointer gen-pass" data-bs-toggle="tooltip" title="Generate Password"><i class="feather-hash"></i></div>
-                                            <div class="input-group-text border-start bg-gray-2 c-pointer show-pass" data-bs-toggle="tooltip" title="Show/Hide Password"><i></i></div>
-                                        </div>
-                                        <div class="progress-bar mt-2">
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                            <div></div>
-                                        </div>
+                        <h2 class="fs-20 fw-bolder mb-2 text-center">NSP Vendor Onboarding</h2>
+                        <p class="fs-12 fw-medium text-muted text-center mb-4">Please complete all 6 steps of the official onboarding process.</p>
+                        
+                        <div class="progress mb-4" style="height: 6px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 0%;"></div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-5 px-sm-5">
+                            <div class="step-indicator active" data-step="1" data-bs-toggle="tooltip" title="Company Profile">1</div>
+                            <div class="step-indicator" data-step="2" data-bs-toggle="tooltip" title="Management">2</div>
+                            <div class="step-indicator" data-step="3" data-bs-toggle="tooltip" title="Products/Services">3</div>
+                            <div class="step-indicator" data-step="4" data-bs-toggle="tooltip" title="Financials">4</div>
+                            <div class="step-indicator" data-step="5" data-bs-toggle="tooltip" title="Code of Conduct">5</div>
+                            <div class="step-indicator" data-step="6" data-bs-toggle="tooltip" title="Review">6</div>
+                        </div>
+
+                        <form id="onboardingForm" action="index.html" class="w-100 mt-4">
+                            <!-- Step 1: Company Profile -->
+                            <div class="wizard-step" data-step="1">
+                                <h5 class="mb-4 text-primary">Part 1: Company Profile</h5>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Official Registered Company Name <span class="text-danger">*</span></label>
+                                        <input type="text" name="company_name" class="form-control" placeholder="Enter registration name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Contact Person <span class="text-danger">*</span></label>
+                                        <input type="text" name="contact_person" class="form-control" placeholder="Full Name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" name="email" class="form-control" placeholder="business@email.com" required>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Business Street Address <span class="text-danger">*</span></label>
+                                        <textarea name="address" class="form-control" rows="2" required></textarea>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Tax ID Number (TIN) <span class="text-danger">*</span></label>
+                                        <input type="text" name="tin" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">VAT Registered? <span class="text-danger">*</span></label>
+                                        <select name="vat_registered" class="form-control" required>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6 mb-4">
-                                    <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" placeholder="Re-enter password" required>
+                            </div>
+
+                            <!-- Step 2: Directorate & Executive Management -->
+                            <div class="wizard-step" data-step="2" style="display:none;">
+                                <h5 class="mb-4 text-primary">Part 2: Directorate & Management</h5>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Shareholders (Name, Nationality, Shares) <span class="text-danger">*</span></label>
+                                        <textarea name="shareholders" class="form-control" rows="3" placeholder="List major shareholders" required></textarea>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Company Directorate <span class="text-danger">*</span></label>
+                                        <textarea name="directors" class="form-control" rows="3" placeholder="List directors and their positions" required></textarea>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Executive Management <span class="text-danger">*</span></label>
+                                        <textarea name="management" class="form-control" rows="3" placeholder="List key management staff" required></textarea>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mt-2">
-                                <div class="custom-control custom-checkbox">
+
+                            <!-- Step 3: Company Product/Services -->
+                            <div class="wizard-step" data-step="3" style="display:none;">
+                                <h5 class="mb-4 text-primary">Part 3: Products/Services</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Vendor Classification <span class="text-danger">*</span></label>
+                                        <select name="vendor_classification" class="form-control" required>
+                                            <option value="manufacturer">Manufacturer</option>
+                                            <option value="agent">Agent / Distributor</option>
+                                            <option value="trader">Trader</option>
+                                            <option value="service_provider">Service Provider</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Target Commodities <span class="text-danger">*</span></label>
+                                        <input type="text" name="target_commodities" class="form-control" placeholder="e.g. Electrical Cables, Transformers" required>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Quality Standards (ISO/NIS etc.)</label>
+                                        <input type="text" name="quality_standards" class="form-control" placeholder="e.g. ISO 9001:2015">
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Logistics Capabilities <span class="text-danger">*</span></label>
+                                        <textarea name="logistics" class="form-control" rows="2" placeholder="Describe your transport and delivery capacity" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Financial and General Information -->
+                            <div class="wizard-step" data-step="4" style="display:none;">
+                                <h5 class="mb-4 text-primary">Part 4: Financial & General</h5>
+                                <div class="row">
+                                    <div class="col-md-12 mb-4">
+                                        <label class="form-label">Banker(s) Name & Address <span class="text-danger">*</span></label>
+                                        <textarea name="bankers" class="form-control" rows="2" required></textarea>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Total Labor Force <span class="text-danger">*</span></label>
+                                        <input type="number" name="labor_force" class="form-control" required>
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Major Customers in Power Industry (Last 5) <span class="text-danger">*</span></label>
+                                        <textarea name="major_customers" class="form-control" rows="3" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 5: Code of Conduct & Security -->
+                            <div class="wizard-step" data-step="5" style="display:none;">
+                                <h5 class="mb-4 text-primary">Policy & Security</h5>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <div class="card bg-light border-0">
+                                            <div class="card-body fs-12">
+                                                <h6>NSP Code of Conduct Summary</h6>
+                                                <p>By proceeding, you acknowledge that you have read and agreed to adhere to the NSP Code of Conduct, including policies on Anti-Bribery, Confidentiality, and Ethical Business Practices.</p>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" name="conduct_ack" class="custom-control-input" id="conductAck" required>
+                                                    <label class="custom-control-label fw-bold" for="conductAck">I acknowledge and agree to the Code of Conduct <span class="text-danger">*</span></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Password <span class="text-danger">*</span></label>
+                                        <input type="password" name="password" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
+                                        <input type="password" name="confirm_password" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 6: Final Review & Acknowledgement -->
+                            <div class="wizard-step" data-step="6" style="display:none;">
+                                <h5 class="mb-4 text-primary">Step 6: Final Review</h5>
+                                <p>Please review your information before final submission. You can click "Preview Document" to see a print-ready version of your application.</p>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <label class="form-label">Authorized Representative Name <span class="text-danger">*</span></label>
+                                        <input type="text" name="representative_name" class="form-control" placeholder="Name for digital signature" required>
+                                    </div>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-4">
                                     <input type="checkbox" class="custom-control-input" id="termsCondition" required>
-                                    <label class="custom-control-label c-pointer text-muted" for="termsCondition" style="font-weight: 400 !important">I agree to all the <a href="">Terms &amp; Conditions</a> and <a href="">Privacy Policy</a>.</label>
+                                    <label class="custom-control-label c-pointer text-muted" for="termsCondition" style="font-weight: 400 !important">I agree to the <a href="">Terms &amp; Conditions</a> and <a href="">Privacy Policy</a>.</label>
                                 </div>
                             </div>
-                            <div class="mt-5">
-                                <button type="submit" class="btn btn-lg btn-primary w-100">Register as Vendor</button>
+
+                            <div class="mt-5 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <button type="button" class="btn btn-lg btn-light btn-prev">Previous</button>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-lg btn-outline-primary" id="btn-preview" style="display:none;">Preview Document</button>
+                                    <button type="button" class="btn btn-lg btn-primary btn-next">Next Step</button>
+                                    <button type="submit" class="btn btn-lg btn-success btn-submit-final" style="display:none;">Register as Vendor</button>
+                                </div>
                             </div>
                         </form>
-                        <div class="mt-5 text-muted">
+                        
+                        <div class="mt-5 text-center text-muted">
                             <span>Already have an account?</span>
-                            <a href="auth-login-minimal.html" class="fw-bold">Login</a>
+                            <a href="vendor-login.html" class="fw-bold text-primary">Login</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Preview Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registration Document Preview</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-gray-1">
+                    <div id="previewContent">
+                        <!-- Content injected by JS -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="window.print()"><i class="feather-printer me-2"></i>Print / Save PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--! ================================================================ !-->
     <!--! [End] Main Content !-->
     <!--! ================================================================ !-->
@@ -180,7 +281,12 @@
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="assets/js/common-init.min.js"></script>
+    <script src="assets/js/vendor-onboarding.js"></script>
     <!--! END: Apps Init !-->
+</body>
+
+</html>
+
 </body>
 
 </html>
