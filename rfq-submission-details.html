@@ -131,13 +131,15 @@
                         <div class="card stretch stretch-full">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h5 class="card-title">Attached Quote</h5>
-                                <a href="javascript:void(0)" class="btn btn-sm btn-light-brand"><i class="feather-download me-1"></i> Download</a>
+                                <a href="document_templates/Revised Bid Invitation Format.pages" class="btn btn-sm btn-light-brand" download>
+                                    <i class="feather-download me-1"></i> Download
+                                </a>
                             </div>
                             <div class="card-body bg-gray-50 d-flex align-items-center justify-content-center" style="min-height: 350px;">
                                 <div class="text-center text-muted">
                                     <i class="feather-file-text display-1 mb-3 opacity-25"></i>
-                                    <h6 class="text-dark">proposal_v1.pdf</h6>
-                                    <span class="fs-12">2.4 MB</span>
+                                    <h6 class="text-dark">Revised Bid Invitation Format.pages</h6>
+                                    <span class="fs-12">47.2 KB</span>
                                 </div>
                             </div>
                         </div>
@@ -150,37 +152,55 @@
                                 <h5 class="card-title">Negotiation History</h5>
                             </div>
                             <div class="card-body">
-                                <div class="activity-feed">
-                                    <div class="feed-item pb-4 border-start ps-4 position-relative">
-                                        <div class="dot position-absolute start-0 top-0 translate-middle p-2 bg-primary rounded-circle border border-white"></div>
-                                        <span class="fs-11 text-muted fw-bold">Oct 29, 2023 - 02:30 PM</span>
-                                        <div class="p-3 mt-2 bg-soft-primary rounded">
-                                            <div class="d-flex justify-content-between mb-1">
-                                                <span class="fw-bold text-primary">You sent a counter-offer</span>
-                                                <span class="fw-bold text-dark">₦78,000</span>
-                                            </div>
-                                            <p class="fs-13 mb-0 text-dark">"We can increase the order to 55 units if you can reduce the unit price."</p>
-                                            <div class="mt-2 fs-12 text-muted">
-                                                <span>Request: </span> <span class="fw-bold">55 Units</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="feed-item pb-4 border-start ps-4 position-relative">
-                                        <div class="dot position-absolute start-0 top-0 translate-middle p-2 bg-gray-400 rounded-circle border border-white"></div>
-                                        <span class="fs-11 text-muted fw-bold">Oct 28, 2023 - 09:15 AM</span>
-                                        <div class="mt-1">
-                                            <span class="fw-bold text-dark">Vendor viewed your request</span>
-                                        </div>
-                                    </div>
-                                    <div class="feed-item pb-0 border-start ps-4 position-relative">
-                                        <div class="dot position-absolute start-0 top-0 translate-middle p-2 bg-success rounded-circle border border-white"></div>
-                                        <span class="fs-11 text-muted fw-bold">Oct 26, 2023 - 10:00 AM</span>
-                                        <div class="mt-1">
-                                            <span class="fw-bold text-dark">Original Submission Received</span>
-                                            <div class="fs-13 text-muted">Price: ₦80,500 | Qty: 50</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="negotiation-history">
+    <!-- Initial Submission -->
+    <div class="text-center my-4 position-relative">
+        <hr>
+        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 fs-11 text-muted fw-bold">OCT 26, 2023 - 10:00 AM</span>
+    </div>
+    <div class="mb-4">
+        <div class="d-flex align-items-center gap-2 mb-2">
+            <div class="avatar-text bg-soft-success text-success fs-10 p-1 rounded">GS</div>
+            <span class="fw-bold fs-13">Global Supplies Ltd. (Vendor)</span>
+        </div>
+        <div class="p-3 bg-light rounded shadow-sm border-start border-4 border-success">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-success">Initial Quote</span>
+                <span class="fw-bold fs-16 text-dark">₦80,500</span>
+            </div>
+            <p class="fs-13 mb-2">"Offer valid for bulk purchase. Delivery included. We can supply standard ergonomic chairs with a 3-year warranty."</p>
+            <div class="fs-12 text-muted">Proposed Quantity: <span class="fw-bold">50 Units</span></div>
+        </div>
+    </div>
+
+    <!-- System Update -->
+    <div class="text-center my-4">
+        <span class="badge rounded-pill bg-gray-200 text-muted fs-10 px-3">Oct 28, 2023 - Vendor viewed your request</span>
+    </div>
+
+    <!-- Your Counter-Offer -->
+    <div class="mb-4">
+        <div class="d-flex align-items-center justify-content-end gap-2 mb-2 text-end">
+            <span class="fw-bold fs-13">You (Purchaser)</span>
+            <div class="avatar-text bg-soft-primary text-primary fs-10 p-1 rounded">ME</div>
+        </div>
+        <div class="p-3 bg-soft-primary rounded shadow-sm border-end border-4 border-primary ms-5 text-end">
+            <div class="d-flex justify-content-between align-items-center mb-2 flex-row-reverse">
+                <span class="badge bg-primary">Counter-Offer</span>
+                <span class="fw-bold fs-16 text-dark">₦78,000</span>
+            </div>
+            <p class="fs-13 mb-2">"We can increase the order to 55 units if you can reduce the unit price."</p>
+            <div class="fs-12 text-muted text-end">Requested Quantity: <span class="fw-bold">55 Units</span></div>
+            <div class="fs-11 text-muted mt-2">Oct 29, 2023 - 02:30 PM</div>
+        </div>
+    </div>
+
+    <!-- Awaiting Response Placeholder -->
+    <!-- <div class="text-center mt-5">
+        <div class="spinner-grow spinner-grow-sm text-warning me-2" role="status"></div>
+        <span class="fs-12 fw-bold text-warning uppercase">Awaiting Vendor's Response...</span>
+    </div> -->
+</div>
                             </div>
                         </div>
                     </div>
